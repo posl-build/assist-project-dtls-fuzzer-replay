@@ -1,8 +1,9 @@
 name: codespell
-on: [push, pull_request]
+on:
+  workflow_dispatch:
 jobs:
   codespell:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
     - uses: actions/checkout@v7
     - uses: codespell-project/actions-codespell@master

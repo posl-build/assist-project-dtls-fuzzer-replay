@@ -1,10 +1,10 @@
 name: CI
-on: [push, pull_request]
-
+on:
+  workflow_dispatch:
 jobs:
   CTinyDTLS_Server_psk:
     if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: true
     steps:
@@ -30,7 +30,7 @@ jobs:
 
   CTinyDTLS_Client_psk:
     if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: true
     steps:
@@ -56,7 +56,7 @@ jobs:
 
   ETinyDTLS_Server_psk:
     if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: true
     steps:
@@ -82,7 +82,7 @@ jobs:
 
   ETinyDTLS_Client_psk:
     if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: true
     steps:
@@ -108,7 +108,7 @@ jobs:
 
   JSSE-12-0-2_Server_ecdhe_cert_req:
     if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: true
     steps:
@@ -134,7 +134,7 @@ jobs:
 
   JSSE-12-0-2_Client_ecdhe_cert:
     if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: true
     steps:
@@ -160,7 +160,7 @@ jobs:
 
   Mbedtls-2-26-0_Server_all_cert_req:
     if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: true
     steps:
@@ -186,7 +186,7 @@ jobs:
 
   Mbedtls-2-26-0_Client_dhe_ecdhe_rsa_eneg:
     if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: true
     steps:
@@ -212,7 +212,7 @@ jobs:
 
   OpenSSL-1-1-1k_Server_all_cert_req:
     if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: true
     steps:
@@ -238,7 +238,7 @@ jobs:
 
   OpenSSL-1-1-1k_Client_dhe_ecdhe_rsa_eneg:
     if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: true
     steps:
@@ -264,7 +264,7 @@ jobs:
 
   PionDTLS-2-0-9_Server_psk:
     if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
-    runs-on: ubuntu-24.04 # due to needing an old version of golang
+    runs-on: self-hosted
     strategy:
       fail-fast: true
     steps:
@@ -295,7 +295,7 @@ jobs:
 
   PionDTLS-2-0-9_Client_psk:
     if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
-    runs-on: ubuntu-24.04 # due to needing an old version of golang
+    runs-on: self-hosted
     strategy:
       fail-fast: true
     steps:
@@ -326,7 +326,7 @@ jobs:
 
   Scandium-2-0-0-M16_Server_ecdhe_cert_req:
     if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: true
     steps:
@@ -352,7 +352,7 @@ jobs:
 
   Scandium-2-0-0-M16_Client_ecdhe_cert:
     if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: true
     steps:
@@ -379,7 +379,7 @@ jobs:
 
   WolfSSL-4-7-1r_DTLS-1-2_Server_psk:
     if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: true
     steps:
@@ -405,7 +405,7 @@ jobs:
 
   WolfSSL-4-7-1r_DTLS-1-2_Client_psk:
     if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: true
     steps:
@@ -431,7 +431,7 @@ jobs:
 
   WolfSSL-5-7-6_DTLS-1-2_Server_psk:
     if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: true
     steps:
@@ -457,7 +457,7 @@ jobs:
 
   WolfSSL-5-7-6_DTLS-1-2_Client_psk:
     if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: true
     steps:
@@ -483,7 +483,7 @@ jobs:
 
   WolfSSL-5-7-6_DTLS-1-3_Server_psk:
     if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: true
     steps:
@@ -509,7 +509,7 @@ jobs:
 
   WolfSSL-5-7-6_DTLS-1-3_Server_dhe_cert_nreq:
     if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: true
     steps:
@@ -535,7 +535,7 @@ jobs:
 
   WolfSSL-5-7-6_DTLS-1-3_Server_dhe_cert_req:
     if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: true
     steps:
@@ -561,7 +561,7 @@ jobs:
 
   WolfSSL-5-7-6_DTLS-1-3_Client_psk:
     if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: true
     steps:
@@ -587,7 +587,7 @@ jobs:
 
   WolfSSL-5-7-6_DTLS-1-3_Client_dhe_cert_nreq:
     if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: true
     steps:
@@ -613,7 +613,7 @@ jobs:
 
   WolfSSL-5-7-6_DTLS-1-3_Client_dhe_cert_req:
     if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: true
     steps:
